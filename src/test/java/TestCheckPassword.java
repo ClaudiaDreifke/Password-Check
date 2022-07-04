@@ -6,9 +6,9 @@ public class TestCheckPassword {
     @Test
     void testCheckLength_Fail(){
         // given
-        String Password = "1234567";
+        String password = "1234567";
         // when
-        boolean actual = CheckPassword.checkLength(Password);
+        boolean actual = CheckPassword.checkLength(password);
         // then
         Assertions.assertEquals(false, actual);
     }
@@ -16,18 +16,18 @@ public class TestCheckPassword {
     @Test
     void testCheckLength_Pass(){
         // given
-        String Password = "12345678";
+        String password = "12345678";
         // when
-        boolean actual = CheckPassword.checkLength(Password);
+        boolean actual = CheckPassword.checkLength(password);
         // then
         Assertions.assertEquals(true, actual);
     }
     @Test
     void testCheckDigits_Fail(){
         // given
-        String Password = "jklasjd";
+        String password = "jklasjd";
         // when
-        boolean actual = CheckPassword.checkDigits(Password);
+        boolean actual = CheckPassword.checkDigits(password);
         // then
         Assertions.assertEquals(false, actual);
     }
@@ -35,9 +35,9 @@ public class TestCheckPassword {
     @Test
     void testCheckDigits_Pass(){
         // given
-        String Password = "1233423";
+        String password = "1233423";
         // when
-        boolean actual = CheckPassword.checkDigits(Password);
+        boolean actual = CheckPassword.checkDigits(password);
         // then
         Assertions.assertEquals(true, actual);
     }
@@ -45,9 +45,9 @@ public class TestCheckPassword {
     @Test
     void testCheckUpperLowerCase_FailLower(){
         // given
-        String Password = "kkkkkkk";
+        String password = "kkkkkkk";
         // when
-        boolean actual = CheckPassword.checkUpperLowerCase(Password);
+        boolean actual = CheckPassword.checkUpperLowerCase(password);
         // then
         Assertions.assertEquals(false, actual);
     }
@@ -55,9 +55,9 @@ public class TestCheckPassword {
     @Test
     void testCheckUpperLowerCase_FailUpper(){
         // given
-        String Password = "HSHSJSJS";
+        String password = "HSHSJSJS";
         // when
-        boolean actual = CheckPassword.checkUpperLowerCase(Password);
+        boolean actual = CheckPassword.checkUpperLowerCase(password);
         // then
         Assertions.assertEquals(false, actual);
     }
@@ -65,27 +65,27 @@ public class TestCheckPassword {
     @Test
     void testCheckUpperLowerCase_Pass(){
         // given
-        String Password = "HSHSjkjJS";
+        String password = "HSHSjkjJS";
         // when
-        boolean actual = CheckPassword.checkUpperLowerCase(Password);
+        boolean actual = CheckPassword.checkUpperLowerCase(password);
         // then
         Assertions.assertEquals(true, actual);
     }
     @Test
     void testCheckNoUnsecureWords_Fail(){
         // given
-        String Password = "hallo";
+        String password = "hallo";
         // when
-        boolean actual = CheckPassword.checkNoUnsecureWords(Password);
+        boolean actual = CheckPassword.checkNoUnsecureWords(password);
         // then
         Assertions.assertEquals(false, actual);
     }
     @Test
     void testCheckNoUnsecureWords_Pass(){
         // given
-        String Password = "hjsakdh";
+        String password = "hjsakdh";
         // when
-        boolean actual = CheckPassword.checkNoUnsecureWords(Password);
+        boolean actual = CheckPassword.checkNoUnsecureWords(password);
         // then
         Assertions.assertEquals(true, actual);
     }

@@ -5,45 +5,45 @@ public class CheckPassword {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Bitte geben Sie ein Passwort ein:");
-        String Password = sc.nextLine();
+        String password = sc.nextLine();
 
-        if (checkLength(Password) == false) {
+        if (checkLength(password) == false) {
             System.out.println(" Bitte nutzen Sie mindestens 8 Zeichen für Ihr Passwort!");
-        } else if (checkDigits(Password) == false) {
+        } else if (checkDigits(password) == false) {
             System.out.println(" Bitte nutzen Sie Ziffern für Ihr Passwort!");
-        } else if (checkUpperLowerCase(Password) == false) {
+        } else if (checkUpperLowerCase(password) == false) {
             System.out.println(" Bitte nutzen Sie Groß- und Kleinschreibung für Ihr Passwort!");
-        } else if (checkNoUnsecureWords(Password) == false) {
+        } else if (checkNoUnsecureWords(password) == false) {
             System.out.println(" Bitte nutzen Sie keine unsicheren Wörter für Ihr Passwort!");
         } else
             System.out.println("Ihr Passwort ist super!");
 
     }
 
-    public static boolean checkLength(String Password) {
+    public static boolean checkLength(String password) {
         int minimumLength = 8;
-        return Password.length() >= minimumLength;
+        return password.length() >= minimumLength;
     }
 
-    public static boolean checkDigits(String Password) {
+    public static boolean checkDigits(String password) {
         boolean check = false;
-        int stop = (Password.length() - 1);
+        int stop = (password.length() - 1);
         for (int i = 0; i < stop; i++) {
-            char[] PasswordArray = Password.toCharArray();
+            char[] PasswordArray = password.toCharArray();
             if (Character.isDigit(PasswordArray[i])) {
                 check = true;
                 break;
-            } else check = false;
+            }
         }
         return check;
     }
 
-    public static boolean checkUpperLowerCase(String Password) {
+    public static boolean checkUpperLowerCase(String password) {
         boolean checkUpperCase = false;
         boolean checkLowerCase = false;
-        int stop = (Password.length());
+        int stop = (password.length());
         for (int i = 0; i < stop; i++) {
-            char[] PasswordArray = Password.toCharArray();
+            char[] PasswordArray = password.toCharArray();
             if (Character.isUpperCase(PasswordArray[i])) {
                 checkUpperCase = true;
             } else checkLowerCase = true;
@@ -51,12 +51,12 @@ public class CheckPassword {
         return checkUpperCase && checkLowerCase;
     }
 
-    public static boolean checkNoUnsecureWords(String Password) {
+    public static boolean checkNoUnsecureWords(String password) {
         boolean check = true;
         String[] UnsecureWords = {"Hallo", "Passwort", "Password", "123", "abc", "qwertz", "qwerty"};
         int stop = (UnsecureWords.length);
         for (int i = 0; i < stop; i++) {
-            if (Password.equalsIgnoreCase(UnsecureWords[i])) {
+            if (password.equalsIgnoreCase(UnsecureWords[i])) {
                 check = false;
             }
         }
